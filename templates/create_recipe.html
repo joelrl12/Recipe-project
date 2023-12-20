@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Create a New Recipe</h1>
+        <form method="post" class="recipe-form" novalidate>
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+                <label for="{{ form.title.id }}">Recipe Title</label>
+                {{ form.title(class="form-control", placeholder="Enter the recipe title", required="required") }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.category.id }}">Category</label>
+                {{ form.category(class="form-control", placeholder="Select a category", required="required") }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.instructions.id }}">Instructions</label>
+                {{ form.instructions(class="form-control", placeholder="Enter recipe instructions", required="required") }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.ingredients.id }}">Ingredients</label>
+                {{ form.ingredients(class="form-control", placeholder="Enter ingredients (separated by commas)", required="required") }}
+                <small class="text-muted">Enter ingredients separated by commas, e.g., "Ingredient 1, Ingredient 2"</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        .recipe-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .text-muted {
+            font-size: 12px;
+        }
+    </style>
+{% endblock %}

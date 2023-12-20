@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="recipe-details">
+            <h1>{{ recipe.title }}</h1>
+            <p class="author">Author: {{ author_name }}</p>
+            <p class="ingredients">Ingredients: {{ recipe.ingredients }}</p>
+            <p class="instructions">Instructions: {{ recipe.instructions }}</p>
+        </div>
+
+        <!-- Display existing reviews -->
+        <div class="reviews">
+            <h2>Reviews</h2>
+            <ul class="review-list">
+                {% for review in reviews %}
+                    <li class="review-item">
+                        <span class="rating">Rating: {{ review.rating }}</span>
+                        <p class="comment">Comment: {{ review.comment }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Form to submit a new review -->
+        <div class="submit-review">
+            <h2>Submit a Review</h2>
+            <form method="post" action="{{ url_for('submit_review', recipe_id=recipe.id) }}" class="review-form">
+                {{ review_form.hidden_tag() }}
+                <div class="form-group">
+                    {{ review_form.rating.label }} {{ review_form.rating() }}
+                </div>
+                <div class="form-group">
+                    {{ review_form.comment.label }} {{ review_form.comment() }}
+                </div>
+                <button type="submit" class="btn btn-primary">{{ review_form.submit() }}</button>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        {% if current_user.is_authenticated %}
+            <form method="post" action="{{ url_for('toggle_favorite', recipe_id=recipe.id) }}">
+                <button type="submit">
+                    {% if is_favorited %}
+                        Unfavorite Recipe
+                    {% else %}
+                        Favorite Recipe
+                    {% endif %}
+                </button>
+            </form>
+        {% else %}
+            <p>Login to favorite this recipe.</p>
+        {% endif %}
+    </div>
+
+    {% if current_user.is_authenticated and current_user.id == recipe.author.id %}
+    <form method="post" action="{{ url_for('delete_recipe', recipe_id=recipe.id) }}" onsubmit="return confirm('Are you sure you want to delete this recipe?');">
+        <input type="submit" value="Delete Recipe" class="btn btn-danger">
+    </form>
+{% endif %}
+
+{% endblock %}

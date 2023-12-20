@@ -1,0 +1,279 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: rgb(40, 109, 165);
+}
+
+.navbar {
+    background-color: #64A6BD;
+    
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar a {
+    display: block;
+    color: #F4CAE0;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.content {
+    padding: 20px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #64A6BD;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    height: 40px;
+    
+}
+
+footer{
+    margin-top: 50px;
+}
+
+
+.footer a {
+    color: #F4CAE0;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+.footer a:hover {
+    color: #340909;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer li:last-child {
+    margin-right: 0;
+}
+.container {
+    max-width: 600px;
+}
+
+.recipe-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #D7B9D5;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #ADA7C9;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e70c0c;
+}
+
+.text-muted {
+    font-size: 12px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-bottom: 20px;
+    background-color: #783772;
+}
+
+ol {
+    list-style-type: decimal;
+    margin-bottom: 20px;
+    background-color: #F0F0F0;
+}
+
+li {
+    margin-bottom: 8px;
+    color: #D7B9D5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #f38bc1;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #f2f4f7;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.recipe-details {
+    background-color: #3f87d3;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.author, .ingredients, .instructions {
+    margin-bottom: 15px;
+}
+
+.reviews {
+    background-color: #D7B9D5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.review-list {
+    list-style: none;
+    padding: 0;
+}
+
+.review-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+}
+
+.rating {
+    font-weight: bold;
+}
+
+.comment {
+    margin-top: 10px;
+}
+
+.submit-review {
+    background-color: #D7B9D5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background-color: #ADA7C9;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #b71313;
+}
+a {
+    color: #0fb0eb; /* Default link color */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+a:hover {
+    color: #340909; /* Hovered link color */
+}
+
+/* Media Query for Smartphone Screens */
+@media only screen and (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar a {
+        padding: 10px;
+    }
+
+    footer {
+        padding: 5px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .recipe-form {
+        padding: 10px;
+    }
+
+    .form-control {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px 15px;
+    }
+
+    .text-muted {
+        font-size: 10px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .recipe-details, .reviews, .submit-review {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .review-item {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+}
